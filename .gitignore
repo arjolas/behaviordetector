@@ -1,0 +1,69 @@
+# --- .NET ---
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# --- Build Results ---
+*.dll
+*.exe
+*.app
+*.pdb
+*.cache
+*.mdb
+*.log
+*.vspscc
+*.vssscc
+
+# --- Visual Studio Code ---
+.vscode/
+.history/
+*.code-workspace
+
+# --- NuGet ---
+*.nupkg
+packages/
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+
+# --- EF Core Migrations (optional) ---
+Migrations/
+
+# --- Secrets ---
+secrets.json
+*.key
+*.pem
+*.pfx
+
+# --- Docker ---
+*.pid
+*.log
+docker-compose.override.yml
+docker-compose.*.yml
+.env
+.env.*
+
+# --- OS Junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Test Artifacts ---
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.testresults
+
+# --- Others ---
+*.swp
+*.bak
+*.tmp
+
+# --- Logs ---
+logs/
+*.log
+*.log.*
