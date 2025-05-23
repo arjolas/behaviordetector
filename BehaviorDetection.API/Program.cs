@@ -18,6 +18,7 @@ builder.Services.AddScoped<IEventRepository, EventRepository>();
 // ✅ CONFIGURA CHANNEL COMUNICAZIONE EVENTI
 var behaviorEventChannel = Channel.CreateUnbounded<BehaviorEvent>();
 builder.Services.AddSingleton(behaviorEventChannel);
+builder.Services.AddSingleton<InMemoryRateLimiter>();
 builder.Services.AddSingleton<ChannelReader<BehaviorEvent>>(provider => behaviorEventChannel.Reader);
 builder.Services.AddSingleton<ChannelWriter<BehaviorEvent>>(provider => behaviorEventChannel.Writer);
 
