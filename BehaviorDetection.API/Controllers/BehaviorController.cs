@@ -1,6 +1,7 @@
 using BehaviorDetection.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Channels;
+using BehaviorDetection.Domain.Interfaces;
 
 namespace BehaviorDetection.API.Controllers;
 
@@ -20,5 +21,16 @@ public class BehaviorController : ControllerBase
     {
         await _writer.WriteAsync(evt);
         return Accepted();
+    }
+
+     // ✅ AGGIUNTO: recupero eventi per SessionId
+    [HttpGet]
+    public async Task<IActionResult> Get([FromQuery] string sessionId, [FromServices] IEventRepository repository)
+    {
+        if (string.IsNullOrWhiteSpace(sessionId))
+            return BadRequest("Missing sessionId");
+
+        var events = await repository.GetEventsBySessionAsync(sessionId);
+        return Ok(events);
     }
 }

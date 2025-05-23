@@ -23,6 +23,7 @@ builder.Services.AddSingleton<ChannelWriter<BehaviorEvent>>(provider => behavior
 
 // ✅ REGISTRAZIONE AGENTE COLLECTOR
 builder.Services.AddHostedService<CollectorAgent>();
+builder.Services.AddHostedService<AnomalyDetectionAgent>();
 
 // ✅ API + SWAGGER
 builder.Services.AddControllers();

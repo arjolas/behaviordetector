@@ -1,0 +1,19 @@
+### POST un evento comportamentale
+POST http://localhost:5086/api/behavior
+Content-Type: application/json
+
+{
+  "sessionId": "abc123",
+  "userId": "user001",
+  "eventType": "click",
+  "timestamp": "2025-05-22T17:00:00Z",
+  "data": {
+    "x": "100",
+    "y": "200"
+  }
+}
+
+###
+
+### GET tutti gli eventi per una sessionId
+GET http://localhost:5086/api/behavior?sessionId=abc123
